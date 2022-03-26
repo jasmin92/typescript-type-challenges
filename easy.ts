@@ -14,3 +14,8 @@ type MyReadonly<T> = { readonly [key in keyof T]: T[key] }
 // https://github.com/jasmin92/type-challenges/blob/master/questions/11-easy-tuple-to-object/README.md
 
 type TupleToObject<T extends readonly any[]> = { [key in T[number]]: key }
+
+// 14. First of Array
+// https://github.com/jasmin92/type-challenges/blob/master/questions/14-easy-first/README.md
+
+type First<T extends any[]> = T extends [] ? never : T[0]
