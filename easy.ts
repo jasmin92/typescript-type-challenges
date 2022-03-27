@@ -19,3 +19,13 @@ type TupleToObject<T extends readonly any[]> = { [key in T[number]]: key }
 // https://github.com/jasmin92/type-challenges/blob/master/questions/14-easy-first/README.md
 
 type First<T extends any[]> = T extends [] ? never : T[0]
+
+// 18. - Length of Tuple
+// https://github.com/jasmin92/type-challenges/blob/master/questions/18-easy-tuple-length/README.md
+
+type Length<T extends readonly any[]> = T["length"]
+
+// 43. Exclude
+// https://github.com/jasmin92/type-challenges/blob/master/questions/43-easy-exclude/README.md
+
+type MyExclude<T, U> = T extends U ? never : T
