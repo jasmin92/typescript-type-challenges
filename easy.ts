@@ -29,3 +29,12 @@ type Length<T extends readonly any[]> = T["length"]
 // https://github.com/jasmin92/type-challenges/blob/master/questions/43-easy-exclude/README.md
 
 type MyExclude<T, U> = T extends U ? never : T
+
+// 189. Awaited
+// https://github.com/jasmin92/type-challenges/blob/master/questions/189-easy-awaited/README.md
+
+type MyAwaited<T> = T extends Promise<infer P>
+  ? P extends Promise<any>
+    ? MyAwaited<P>
+    : P
+  : never
