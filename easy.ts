@@ -38,3 +38,8 @@ type MyAwaited<T> = T extends Promise<infer P>
     ? MyAwaited<P>
     : P
   : never
+
+// 268. IF
+// https://github.com/jasmin92/type-challenges/blob/master/questions/268-easy-if/README.md
+
+type If<C, T, F> = C extends true ? T : F
