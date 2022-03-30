@@ -43,3 +43,8 @@ type MyAwaited<T> = T extends Promise<infer P>
 // https://github.com/jasmin92/type-challenges/blob/master/questions/268-easy-if/README.md
 
 type If<C, T, F> = C extends true ? T : F
+
+// 533 Concat
+// https://github.com/jasmin92/type-challenges/blob/master/questions/533-easy-concat/README.md
+
+type Concat<T extends any[], U extends any[]> = [...T, ...U]
