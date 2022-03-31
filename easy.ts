@@ -71,3 +71,8 @@ type Includes<T extends readonly any[], U> = T extends [
 // https://github.com/jasmin92/type-challenges/blob/master/questions/3057-easy-push/README.md
 
 type Push<T extends any[], U> = [...T, U]
+
+// 3060. Unshift
+// https://github.com/jasmin92/type-challenges/blob/master/questions/3060-easy-unshift/README.md
+
+type Unshift<T extends any[], U> = [U, ...T]
