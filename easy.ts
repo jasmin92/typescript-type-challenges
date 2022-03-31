@@ -66,3 +66,8 @@ type Includes<T extends readonly any[], U> = T extends [
     ? true
     : Includes<Rest, U>
   : false
+
+// 3057. Push
+// https://github.com/jasmin92/type-challenges/blob/master/questions/3057-easy-push/README.md
+
+type Push<T extends any[], U> = [...T, U]
