@@ -48,3 +48,21 @@ type If<C, T, F> = C extends true ? T : F
 // https://github.com/jasmin92/type-challenges/blob/master/questions/533-easy-concat/README.md
 
 type Concat<T extends any[], U extends any[]> = [...T, ...U]
+
+// 898. Incldues
+// https://github.com/jasmin92/type-challenges/blob/master/questions/898-easy-includes/README.md
+
+type Equal<X, Y> = <T>() => T extends X
+  ? 1
+  : 2 extends <T>() => T extends Y ? 1 : 2
+  ? true
+  : false
+
+type Includes<T extends readonly any[], U> = T extends [
+  infer First,
+  ...infer Rest
+]
+  ? Equal<First, U> extends true
+    ? true
+    : Includes<Rest, U>
+  : false
