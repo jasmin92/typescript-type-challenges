@@ -76,3 +76,8 @@ type Push<T extends any[], U> = [...T, U]
 // https://github.com/jasmin92/type-challenges/blob/master/questions/3060-easy-unshift/README.md
 
 type Unshift<T extends any[], U> = [U, ...T]
+
+// 3312. Parameters
+// https://github.com/jasmin92/type-challenges/blob/master/questions/3312-easy-parameters/README.md
+
+type MyParameters<T> = T extends (...args: infer T) => any ? T : never
